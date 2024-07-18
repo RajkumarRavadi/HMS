@@ -36,4 +36,10 @@ public class ApiClass {
         patient = patientDB.get(patientId);
         return patient;
     }
+
+    @DeleteMapping("deletePatientRecord")
+    public String deletePatientRecord(@RequestParam("patientId") Integer patientId){
+        patientDB.remove(patientId);
+        return "The patient has been remove from the DB";
+    }
 }
