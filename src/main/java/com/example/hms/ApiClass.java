@@ -21,14 +21,14 @@ public class ApiClass {
         return total;
     }
 
-    @PostMapping("addPatient")
-    public String  addPatient(@RequestBody Patient patient){
-        int key = patient.getPatientId();
-        //ADD THIS TO PATIENT DB
-        patientDB.put(key, patient);
-
-        return "The patient with key "+key+"has added to the BD";
-    }
+//    @PostMapping("addPatient")
+//    public String  addPatient(@RequestBody Patient patient){
+//        int key = patient.getPatientId();
+//        //ADD THIS TO PATIENT DB
+//        patientDB.put(key, patient);
+//
+//        return "The patient with key "+key+"has added to the BD";
+//    }
 
     @GetMapping("getPatientInfo")
     public Patient getPatientInfo(@RequestParam("patientId") Integer patientId){
