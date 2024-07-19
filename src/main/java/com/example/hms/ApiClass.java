@@ -1,6 +1,9 @@
 package com.example.hms;
 
 import java.util.HashMap;
+
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,10 +18,10 @@ public class ApiClass {
     }
 
     @GetMapping("sum")
-    public Integer getSum(@RequestParam("num1") Integer no1,
-                          @RequestParam("num2") Integer no2){
+    public ResponseEntity getSum(@RequestParam("num1") Integer no1,
+                                 @RequestParam("num2") Integer no2){
         Integer total = no1 + no2;
-        return total;
+        return new ResponseEntity(total, HttpStatusCode.valueOf(200));
     }
 
 //    @PostMapping("addPatient")
